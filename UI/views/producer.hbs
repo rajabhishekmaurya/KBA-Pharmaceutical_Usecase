@@ -1,0 +1,162 @@
+<head>
+<div class="px-3 py-2 bg-secondary text-white">
+    <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <h2 href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+        <svg class="bi d-block mx-auto mb-1 " width="24" height="24"></svg>
+        {{title}}          
+        </h2>
+    <a type="button" class="btn btn-success filled " onClick="getEvent()" class="nav-link text-white">
+    Notifications
+    </a>        
+    <a type="button" class="btn btn-danger filled marginLeft " href="/" class="nav-link text-white">
+    Logout
+    </a>
+                
+    </div>
+    </div>
+</div> 
+</head>
+</br>
+<div class="jumbotron jumbotronProducerjumbotron-fluid">
+  <div class="container">
+    <h2 class="display-4">Producer</h2>
+    <p class="lead"> 
+    
+     Pharmaceutical Processing is the process of drug manufacturing and can be broken down into a range of unit operations, such as blending, granulation, milling, coating, tablet pressing, filling, and others. The Pharmaceutical manufacturing process has precise requirements and manufacturing guidelines for quality.
+    <mark>Producer</mark> are one of the major players in the medicine industry.</p>
+  </div>
+</div>
+</br>
+<div class="container-fluid">
+    <div class="row rowBox" >
+        <div class="col-md-3 col-sm-12"></div>
+
+        <div class="col-md-6 col-sm-12">
+
+            <div class="medicined medicined-shadow">
+                <div class="medicined-header" style="background-color:tomato">
+                    <legend class="text-center" data-bs-toggle="collapse" href="#collapseQueryAdd" role="button" aria-expanded="false" aria-controls="collapseExample">Add a new Medicine</legend>
+                </div>
+                <div class="form-modal">
+                <div class="medicined-body collapse" id="collapseQueryAdd">
+                    <form id="manForm">
+                        <div class="row" >
+                            <div class="col-md-12 col-sm-12" class="form-group">
+                            <a>Medicine_Id</a>
+                            <label for="medicineId Number" class="form-label mt-4"></label>
+                            <input type="text" class="form-control" id="medicineId Number" aria-describedby="medicineId Number" placeholder="001">
+                            </div>
+                        </div>
+                        <div class="row" >
+                            <div class="col-md-12 col-sm-12" class="form-group">
+                            <a>Medicine MedicineName</a>
+                            <label for="medicineMedicineName" class="form-label mt-4"></label>
+                            <input type="text" class="form-control" id="medicineMedicineName" aria-describedby="medicineMedicineName" placeholder="anyMedicine">
+                            </div>
+                        </div>
+                        <div class="row" >
+                            <div class="col-md-12 col-sm-12" class="form-group">
+                            <a>Date of manufacture</a>
+                            <label for="dom" class="form-label mt-4"></label>
+                            <input type="date" class="form-control" onfocus="(this.type='date')" id="dom" aria-describedby="dom" placeholder="22/06/2021">
+                            </div>
+                        </div>
+                        <div class="row" >
+                            <div class="col-md-12 col-sm-12" class="form-group">
+                            <a>ProducerName</a>
+                            <label for="manName" class="form-label mt-4"></label>
+                            <input type="text" class="form-control" id="manName" aria-describedby="manName" placeholder="anyMedicine Pharmaceuticals">
+                            </div>
+                        </div>      
+                        </br>
+                        <div class="row" >
+                            <div class="col-md-12 col-sm-12" >
+                                <button type="button" onclick="ManWriteData(event)" class="btn btn-secondary rounded-pill">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-12"> 
+        </div>
+
+    </div>
+</div>
+</br>
+<div class="container-fluid">
+    <div class="row rowBox" >
+        <div class="col-md-3 col-sm-12"></div>
+        <div class="col-md-6 col-sm-12">
+            <div class="medicined medicined-shadow">
+                <div class="medicined-header" style="background-color:tomato">
+                    <legend class="text-center" data-bs-toggle="collapse" href="#collapseQueryRead" role="button" aria-expanded="false" aria-controls="collapseExample">Get Details of a Specific Medicine</legend>
+                </div>
+                <div class="medicined-body collapse"  id="collapseQueryRead">
+                    <form>
+                        <div class="row .navbar-brand" >
+                            <div class="col-md-12 col-sm-12" class="form-group">
+                            <a>Vin Number</a>
+                            <label for="QueryVinNumbMan" class="form-label mt-4"></label>
+                            <input type="text" class="form-control" id="QueryVinNumbMan" aria-describedby="QueryVinNumbMan" placeholder="001">
+                            </div>
+                        </div>
+                        </br>
+                        <button type="submit" onclick="ManQueryData(event)" class="btn btn-fill btn-secondary rounded-pill">Submit</button></br>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-12"></div>
+    </div>
+</div>
+</br>
+
+<div class="container-fluid">
+    <div class="row rowBox" >
+        <div class="col-md-3 col-sm-12"></div>
+        <div class="col-md-6 col-sm-12">
+            <div class="medicined">
+                <div class="medicined-header" style="background-color:tomato">
+                    <legend class="text-center" >Medicines in Factory</legend>
+                </div>
+                <div class="medicined-body">
+                   <div class="table-container">
+      <table class="table" style="width:100%">
+          <thead id="colored-table">
+              <th>MedicineId</th>
+              <th>MedicineName</th>
+              <th>Owner</th>
+              <th>Status</th>
+              <th> </th>
+          </thead>
+          <tbody>
+              {{#each itemList}}
+              {{#ifequals this.Record.status "In Factory"}}
+              <tr>
+                  <td>{{this.Key}}</td>
+                  <td>{{this.Record.medicineName}}</td>
+                  <td>{{this.Record.ownedBy}}</td>
+                  <td>{{this.Record.status}}</td>
+                  <td><button class="btn btn-success filled" onClick="getMatchingOrders('{{this.Key}}');">Get Matching Orders</button></td>
+
+              </tr>
+              {{/ifequals}}
+              {{/each}}
+          </tbody>
+      </table>
+  </div> 
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-12"></div>
+
+    </div>
+</div>
+</br>
+
+<script type="text/javascript" src='/javascripts/main.js'></script>
+

@@ -1,0 +1,10 @@
+[
+    {
+        "name": "CollectionOrder",
+        "policy": "OR('supplier-pharma-com.member', 'retailer-pharma-com.member')",
+        "requiredPeerCount": 1,
+        "maxPeerCount": 1,
+        "blockToLive": 1000000,
+        "memberOnlyRead": true
+    }
+]

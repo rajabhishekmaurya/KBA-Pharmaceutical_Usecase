@@ -1,0 +1,114 @@
+
+{{!-- Navigation  --}}
+<head>
+<div class="px-3 py-2 bg-secondary text-white">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <h2 href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+      <svg class="bi d-block mx-auto mb-1 " width="24" height="24"></svg>
+      {{title}}          
+      </h2>
+    <a type="button" class="btn btn-danger filled" data-toggle="modal" data-target="#selectModal" class="nav-link text-white">
+    Login
+    </a>               
+    </div>
+  </div>
+</div>
+</head>
+
+
+{{!-- List of all assets --}}
+
+<div id="selectModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Login as..</h4>
+      </div>
+
+      <div class="modal-body">
+        <div class="form-modal">
+            <div class="container-fluid">
+                <div class="row rowBox" >
+                <div class="row">
+                    <div class="col-xs-12 col-md-4">
+                    <a href="/producer" class="thumbnail center">
+                        <img src="images/producer.png" width="100" height="100" alt="...">
+                    </a>
+                    <h5 class="text-center">Producer</h5>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                    <a href="/supplier" class="thumbnail center">
+                        <img src="images/supplier.png" width="100" height="100" alt="...">
+                    </a>
+                    <h5 class="text-center">Supplier</h5>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                    <a href="/retailer" class="thumbnail center">
+                        <img src="images/retailer.png" width="100" height="100" alt="...">
+                    </a>
+                    <h5 class="text-center">Retailer</h5>
+                    </div>                
+                </div>
+            </div>
+            </div>          
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h2 class="display-4">Pharmaceutical Blockchain Project</h2>
+    <p class="lead"> This project is a group of entities such as <mark>Producer</mark>, <mark>Supplier</mark> and <mark>Retailer</mark> towards a common goal of achieving immutability, transparency and privacy in the Pharmaceutical industry</p>
+  </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row rowBox" >
+      <div class="medicined medicined-shadow">
+        <div class="medicined-header" style="background-color:rgb(173, 186, 192)">
+            <legend class="text-center">Complete Medicine List</legend>
+        </div>
+        <div class="medicined-body" >
+          <div class="table-container">
+              <table class="table" style="width:100%">
+                  <thead id="colored-table">
+                      <th>MedicineId</th>
+                      <th>AssetType</th>
+                      <th>DOM</th>
+                      <th>MedicineName</th>
+                      <th>Owner</th>
+                      <th>Status</th>
+                      <th> </th>
+                  </thead>
+                  <tbody>
+                      {{#each itemList}}
+                      <tr>
+                          <td>{{this.Key}}</td>
+                          <td>{{this.Record.assetType}}</td>
+                          <td>{{this.Record.dateOfManufacture}}</td>
+                          <td>{{this.Record.medicineName}}</td>
+                          <td>{{this.Record.ownedBy}}</td>
+                          <td>{{this.Record.status}}</td>
+                          {{!-- <td><button class="btn btn-danger filled" onClick="getMedicineHistory('{{this.Key}}');">Get history</button></td> --}}
+                      </tr>
+                      {{/each}}
+                  </tbody>
+              </table>
+          </div>
+        </div>    
+      </div>
+  </div>
+</div>
+<script type="text/javascript" src='/javascripts/main.js'></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>

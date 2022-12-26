@@ -1,0 +1,108 @@
+<div class="px-3 py-2 bg-secondary text-white">
+    <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <h2 href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+        <svg class="bi d-block mx-auto mb-1 " width="24" height="24"></svg>
+        {{title}}          
+        </h2>
+    <a type="button" class="btn btn-danger filled" href="/" class="nav-link text-white">
+    Logout
+    </a>            
+    </div>
+    </div>
+</div> 
+<br/>
+<div class="jumbotron jumbotronSupplier jumbotron-fluid">
+  <div class="container">
+    <p class="lead"> The Pharmaceutical Supply Chain this supply chain include multiple government agencies, hospitals, clinics, drug manufacturers, drug distributors, pharmacy chains, retailers, research organizations, and the FDA. <br><mark>Suppliers</mark> perform the initial sales process as well as deliver after-sales services.</p>
+  </div>
+</div>
+</br>
+<div class="container-fluid">
+    <div class="row rowBox" >
+        <div class="col-md-5 col-sm-12"></div>
+        <div class="col-md-4 col-sm-12">
+            <button type="submit" onclick="allOrders(event)" class="btn btn-fill btn-primary rounded-pill">Show All Orders</button>
+        </div>
+        <div class="col-md-3 col-sm-12">
+        </div>
+
+    </div>
+</div>        
+<div class="container-fluid">
+    <div class="row rowBox" >
+        <div class="col-md-3 col-sm-12"></div>
+        <div class="col-md-6 col-sm-12">
+            <div class="medicined medicined-shadow">
+                <div class="medicined-header" style="background-color:teal">
+                    <legend class="text-center" data-bs-toggle="collapse" href="#collapseRaise" role="button" aria-expanded="false" aria-controls="collapseExample">Raise new order</legend></br>
+                </div>
+                <div class="medicined-body collapse" id="collapseRaise">
+                    <form id="disForm" >
+                        <div class="row .navbar-brand " >
+                            <div class="col-md-12 col-sm-12" class="form-group">
+                            <a>Order Number</a>
+                            <label for="orderNumber" class="form-label mt-4"></label>
+                            <input type="text" class="form-control" id="orderNumber" aria-describedby="orderNumber" placeholder="A71">
+                            </div>
+                        </div>
+                        <div class="row" >
+                            <div class="col-md-12 col-sm-12" class="form-group">
+                            <a>Medicine MedicineName</a>
+                            <label for="medicineMedicineName" class="form-label mt-4"></label>
+                            <input type="text" class="form-control" id="medicineMedicineName" aria-describedby="medicineMedicineName" placeholder="anyMedicine">
+                            </div>
+                        </div>
+
+                      <div class="row" >
+                            <div class="col-md-12 col-sm-12" class="form-group">
+                            <a>Supplier Name</a>
+                            <label for="supplierName" class="form-label mt-4"></label>
+                            <input type="text" class="form-control" id="supplierName" aria-describedby="supplierName" placeholder=" Enter name or org.">
+                            </div>
+                        </div>      
+                        </br>
+                        <div class="row" >
+                            <div class="col-md-12 col-sm-12" class="form-group">
+                                <button type="submit" onclick="createOrder(event)" class="btn btn-fill btn-secondary rounded-pill">Raise Order</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-12"></div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row rowBox" >
+        <div class="col-md-3 col-sm-12"></div>
+        <div class="col-md-6 col-sm-12">
+            <div class="medicined medicined-shadow">
+                <div class="medicined-header" style="background-color:teal">
+                    <legend class="text-center" data-bs-toggle="collapse" href="#collapseQueryReadOrder" role="button" aria-expanded="false" aria-controls="collapseExample" >Check Order</legend>
+                </div>
+                <div class="medicined-body collapse" id="collapseQueryReadOrder">
+                    <form>
+                        <div class="row .navbar-brand" >
+                            <div class="col-md-12 col-sm-12" class="form-group">
+                            <a>Order Number</a>
+                            <label for="ordNum" class="form-label mt-4"></label>
+                            <input type="text" class="form-control" id="ordNum" aria-describedby="ordNum" placeholder="A71">
+                            </div>
+                        </div>
+                        </br>
+                        <button type="submit" onclick="readOrder(event)" class="btn btn-fill btn-secondary rounded-pill">Submit</button></br>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-12"></div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script type="text/javascript" src='/javascripts/main.js'></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>

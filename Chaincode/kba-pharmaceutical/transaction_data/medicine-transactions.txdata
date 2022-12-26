@@ -1,0 +1,44 @@
+[
+    {
+        "transactionName": "medicineExists",
+        "transactionLabel": "A test medicineExists transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "createMedicine",
+        "transactionLabel": "A test createMedicine transaction",
+        "arguments": [
+            "001",
+            "some value"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "readMedicine",
+        "transactionLabel": "A test readMedicine transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "updateMedicine",
+        "transactionLabel": "A test updateMedicine transaction",
+        "arguments": [
+            "001",
+            "some other value"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "deleteMedicine",
+        "transactionLabel": "A test deleteMedicine transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {}
+    }
+]
