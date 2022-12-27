@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  An Permissioned Blockchain based Public Procurement System, provides interactive decentralized auction system.
+  An Permissioned Blockchain based Pharmaceutical supplychain project.
 </p>
 
 ## Installation
