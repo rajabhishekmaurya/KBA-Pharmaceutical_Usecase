@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  An Permissioned Blockchain based Pharmaceutical supplychain project.
+  A Permissioned Blockchain (Private Blockchain) based Pharmaceutical supplychain project.
 </p>
 
 ## Installation
